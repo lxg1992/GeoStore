@@ -3,10 +3,15 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const storesRoute = require('./routes/stores')
+const connectDB = require('./config/db')
+
 //Load env variables
 dotenv.config({
   path: './config/config.env'
 })
+
+//Connect to mongoDB Atlas
+connectDB() 
 //Initialize app
 const app = express();
 //Body parser
